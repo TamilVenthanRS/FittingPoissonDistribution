@@ -34,6 +34,8 @@ The Poisson distribution is the discrete probability distribution of the number 
 # Register Number: 212220230054
 # Name: Tamil Venthan R S
 
+
+
 import numpy as np
 import math
 import scipy.stats
@@ -42,14 +44,14 @@ f=[153,169,72,31,12,6,2]
 n=6
 N=np.sum(f)
 mean=np.inner(X,f)/N
-Pr=list(); E=list(); xi=list()
+Prob=list(); E=list(); xi=list()
 print("  X P(X=x) Obs.Fr  Ex.Fre   xi ")
 print("----------------------------------")
 for x in range(7):
-    Pr.append(math.exp(-mean)mean*x/math.factorial(x))
-    E.append(Pr[x]*N)
+    Prob.append(math.exp(-mean)*mean**x/math.factorial(x))
+    E.append(Prob[x]*N)
     xi.append((f[x]-E[x])**2/E[x])
-    print("%2.2f %2.2f  %4.2f   %3.2f  %3.2f"%(x,Pr[x],f[x],E[x],xi[x]))
+    print("%2.2f %2.2f  %4.2f   %3.2f   %3.2f"%(x,Prob[x],f[x],E[x],xi[x]))
 print("----------------------------------")
 cal_chi2=np.sum(xi)
 print("Calculated value of Chi square is %4.2f"%cal_chi2)
@@ -59,11 +61,13 @@ if cal_chi2<tab_chi2:
     print("The given data can be fitted in Poissson distribution at 1% LOS")
 else:
     print("The given data cannot be fitted in Poisson distribution at 1% LOS")
+
 ```
  
 
 # Output : 
- ![166265362-48455099-b050-45d0-ae08-0149cc72d3a9](https://user-images.githubusercontent.com/75235477/166462282-e37675f2-d36e-4040-835a-6240c01717ad.png)
+ 
+![TRGEY](https://user-images.githubusercontent.com/75235477/168961040-978b6a68-b189-43c2-adbd-2ed157a93a59.png)
 
 # Results:
 Thus, the program to fit poisson distribution is implemented
